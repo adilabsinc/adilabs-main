@@ -1,0 +1,86 @@
+Create a modern, fully responsive, animated website for a cutting-edge technology company called ADILABS INC. The company specializes in Revolutionary Tech Empowerment — revolutionizing businesses through AI, blockchain, cloud, and automation solutions.
+
+Key Elements to Include:
+Company Introduction:
+
+Name: ADILABS INC
+
+Tagline: "Revolutionizing Businesses with Tech Empowerment"
+
+Description: ADILABS INC leverages emerging technologies like AI and blockchain to deliver groundbreaking solutions that drive efficiency, scalability, and security for businesses.
+
+Flagship Product Showcase:
+
+A SaaS platform tailored for large civil and infrastructure companies (e.g., metro and railway sectors).
+
+Features include:
+
+AI agentic models pre-configured for industry tasks
+
+CBS (Cost Breakdown Structure) Reports
+
+Automated Purchase Orders & Change Orders
+
+Labor, Equipment, and Material Tracking
+
+Role-based approval systems
+
+AI assistant embedded across workflows
+
+Solutions & Capabilities (with icons or animated cards):
+
+AI Agentic Models & LLMs
+
+Cloud Infrastructure & Kubernetes orchestration
+
+SaaS Application Development
+
+Data Integration & Analysis
+
+Cybersecurity & Risk Mitigation
+
+Power Automate / Digital Process Automation (DPA)
+
+System Integration Interfaces
+
+Sections to Include:
+
+Hero Section with strong tagline and animated background
+
+About Us (mission, vision, story)
+
+Products & Services (grid/cards with hover animations)
+
+AI Solutions (highlighting the AI & LLM capabilities)
+
+Cloud & Infrastructure (cloud-native tech, Kubernetes)
+
+Case Study or Use Case (SaaS for civil/metro project)
+
+Testimonials or Partner Logos
+
+Contact Us (with form and embedded map)
+
+Design Requirements:
+
+Sleek, modern, tech-forward aesthetic
+
+Smooth scroll animations and hover effects
+
+Animated elements (e.g., counters, sliders, interactive tabs)
+
+Dark-light theme toggle (optional)
+
+Mobile responsiveness
+
+Easy scalability for future additions
+
+Tech Stack (suggested but flexible):
+
+Reactjs, vite with tailwind css
+
+Animation libraries like GSAP or AOS
+
+Clean, modular code for ease of expansion
+
+Focus on showcasing innovation, AI-driven automation, and enterprise-level solutions with visually impressive, intuitive UI/UX.
