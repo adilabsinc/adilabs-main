@@ -27,29 +27,23 @@ export default function About() {
 
   const team = [
     {
-      name: 'Dr. Sarah Chen',
-      role: 'Chief Technology Officer',
+      name: 'Masarrath Sulthana',
+      role: 'Chief Executive Officer',
       expertise: 'AI & Machine Learning',
       experience: '15+ years'
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'Head of Blockchain',
+      name: 'Ikram Mohammed',
+      role: 'Chief Technology Officer',
       expertise: 'Distributed Systems',
       experience: '12+ years'
     },
     {
-      name: 'Emily Watson',
+      name: 'Mohammed Shahnawaz',
       role: 'Cloud Architecture Lead',
       expertise: 'Kubernetes & DevOps',
       experience: '10+ years'
     },
-    {
-      name: 'David Kim',
-      role: 'AI Solutions Director',
-      expertise: 'LLMs & Automation',
-      experience: '8+ years'
-    }
   ];
 
   return (
@@ -161,7 +155,7 @@ export default function About() {
 
       {/* Team */}
       <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -175,7 +169,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}

@@ -13,6 +13,7 @@ import {
   Lock,
   Cpu
 } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Services() {
   const services = [
@@ -290,14 +291,16 @@ export default function Services() {
             <p className="text-xl mb-8 max-w-3xl mx-auto">
               Let's discuss how our services can transform your business and drive growth.
             </p>
-            <motion.button 
-              className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>Schedule a Consultation</span>
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            <Link href="/contact">
+              <motion.button 
+                className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Schedule a Consultation</span>
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>

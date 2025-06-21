@@ -14,6 +14,10 @@ import {
   Users,
   MessageCircle
 } from 'lucide-react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import type { LatLngExpression } from 'leaflet';
+import { Link } from 'wouter';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -57,13 +61,13 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
+      details: '+1 (623) 336-5336',
       description: 'Mon-Fri from 9am to 6pm PST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'San Francisco, CA',
+      details: 'Toronoto, CA',
       description: 'Come visit our headquarters'
     },
     {
@@ -76,24 +80,21 @@ export default function Contact() {
 
   const offices = [
     {
-      city: 'San Francisco',
-      country: 'USA',
-      address: '123 Tech Street, San Francisco, CA 94105',
-      phone: '+1 (555) 123-4567'
+      city: 'Toronoto',
+      country: 'Canada',
+      address: '586 Winterton way Mississuaga Ontario L5R 3J4',
+      phone: '+1 (623) 336-5336'
     },
     {
-      city: 'London',
-      country: 'UK',
-      address: '456 Innovation Ave, London EC2A 4BX',
-      phone: '+44 20 7123 4567'
+      city: 'Hyderabad',
+      country: 'India',
+      address: 'Gachiboli, Hyderabad, Telangana',
+      phone: '+91 9133085364'
     },
-    {
-      city: 'Singapore',
-      country: 'Singapore',
-      address: '789 Business Park, Singapore 018989',
-      phone: '+65 6123 4567'
-    }
   ];
+
+  // Coordinates for 586 Winterton way Mississuaga Ontario L5R 3J4
+  const officePosition: LatLngExpression = [43.6066, -79.6849];
 
   return (
     <div className="pt-16">
@@ -299,10 +300,12 @@ export default function Contact() {
               <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Quick Actions</h3>
                 <div className="space-y-3">
-                  <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                    <MessageCircle className="w-5 h-5 text-blue-600" />
-                    <span className="text-gray-900 dark:text-white">Schedule a Demo</span>
-                  </button>
+                  <Link href="/contact">
+                    <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                      <MessageCircle className="w-5 h-5 text-blue-600" />
+                      <span className="text-gray-900 dark:text-white">Schedule a Demo</span>
+                    </button>
+                  </Link>
                   <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
                     <Users className="w-5 h-5 text-green-600" />
                     <span className="text-gray-900 dark:text-white">Consultation Call</span>
@@ -334,7 +337,7 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offices.map((office, index) => (
               <motion.div
                 key={office.city}
@@ -378,7 +381,6 @@ export default function Contact() {
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Find Us</h2>
           </motion.div>
-          
           <motion.div
             className="bg-gray-200 dark:bg-gray-700 h-96 rounded-xl flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -386,10 +388,23 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="text-center text-gray-600 dark:text-gray-400">
-              <MapPin className="w-16 h-16 mx-auto mb-4" />
-              <p className="text-lg">Interactive Map Coming Soon</p>
-              <p className="text-sm">Visit us at our San Francisco headquarters</p>
+            <div className="w-full h-full">
+              <MapContainer 
+                center={officePosition} 
+                zoom={15} 
+                scrollWheelZoom={false} 
+                style={{ height: '100%', width: '100%', borderRadius: '0.75rem' }}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={officePosition}>
+                  <Popup>
+                    586 Winterton way<br />Mississuaga, Ontario L5R 3J4
+                  </Popup>
+                </Marker>
+              </MapContainer>
             </div>
           </motion.div>
         </div>
