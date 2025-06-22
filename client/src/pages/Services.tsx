@@ -8,9 +8,6 @@ import {
   Code,
   CheckCircle,
   ArrowRight,
-  Zap,
-  Layers,
-  Lock,
   Cpu
 } from 'lucide-react';
 import { Link } from 'wouter';

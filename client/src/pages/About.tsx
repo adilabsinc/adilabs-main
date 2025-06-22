@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Users, Award, TrendingUp, Globe } from 'lucide-react';
+import { Target, Eye, Users, Award, Globe } from 'lucide-react';
 
 export default function About() {
   const values = [
@@ -28,21 +28,21 @@ export default function About() {
   const team = [
     {
       name: 'Masarrath Sulthana',
-      role: 'Chief Executive Officer',
+      role: 'Head of Operations',
       expertise: 'AI & Machine Learning',
-      experience: '15+ years'
+      experience: '12+ years'
     },
     {
       name: 'Ikram Mohammed',
       role: 'Chief Technology Officer',
       expertise: 'Distributed Systems',
-      experience: '12+ years'
+      experience: '15+ years'
     },
     {
       name: 'Mohammed Shahnawaz',
       role: 'Cloud Architecture Lead',
       expertise: 'Kubernetes & DevOps',
-      experience: '10+ years'
+      experience: '5+ years'
     },
   ];
 

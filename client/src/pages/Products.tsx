@@ -5,13 +5,11 @@ import {
   FileText, 
   ShoppingCart, 
   Users, 
-  Shield,
   CheckCircle,
   ArrowRight,
   Zap,
   BarChart3,
-  Settings,
-  Clock
+  Settings
 } from 'lucide-react';
 import { Link } from 'wouter';
 

@@ -1,0 +1,52 @@
+name: ui-frontend
+
+permissions:
+  id-token: write
+  contents: read
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  ACR_NAME: adcacrv2
+
+jobs:
+  build-ui-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: 'Az CLI login'
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+    - name: Build and push Docker image
+      id: build-image
+      env:
+        REPO_NAME: prosols/standaloneapps/${{ github.ref_name }}
+        IMAGE_TAG: 0.${{ github.run_number }}.${{ github.run_attempt }}
+      run: |
+        # Convert repository name to lowercase
+        ACR_FQDN="${ACR_NAME}.azurecr.io"
+        REPO_NAME_LOWER=$(echo "${{ env.REPO_NAME }}" | tr '[:upper:]' '[:lower:]')
+        FULL_TAG="${ACR_FQDN}/${REPO_NAME_LOWER}:${{ env.IMAGE_TAG }}"
+        
+        # Login to ACR
+        az acr login --name $ACR_NAME
+        
+        # Build and push
+        docker build \
+            -f Dockerfile \
+            -t ${FULL_TAG} .
+        
+        echo "Pushing image to ACR..."
+        docker push $FULL_TAG
+        echo "name=image::$FULL_TAG" >> $GITHUB_OUTPUT 
