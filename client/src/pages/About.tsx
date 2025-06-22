@@ -28,21 +28,21 @@ export default function About() {
   const team = [
     {
       name: 'Masarrath Sulthana',
-      role: 'Head of Operations',
+      role: 'Head of Operations (HOO)',
       expertise: 'AI & Machine Learning',
       experience: '12+ years'
     },
     {
-      name: 'Ikram Mohammed',
-      role: 'Chief Technology Officer',
+      name: 'Mohammed Shahnawaz',
+      role: 'Chief Technology Officer (CTO)',
       expertise: 'Distributed Systems',
-      experience: '15+ years'
+      experience: '5+ years'
     },
     {
-      name: 'Mohammed Shahnawaz',
-      role: 'Cloud Architecture Lead',
-      expertise: 'Kubernetes & DevOps',
-      experience: '5+ years'
+      name: 'Altaf Aziz',
+      role: 'Managing Director (MD)',
+      expertise: 'Business Strategy',
+      experience: '10+ years'
     },
   ];
 
