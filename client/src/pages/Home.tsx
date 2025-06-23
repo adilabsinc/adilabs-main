@@ -234,7 +234,7 @@ export default function Home() {
                   <CountUp
                     end={parseInt(stat.number)}
                     duration={2}
-                    suffix={stat.number.replace(/[0-9]/g, '')}
+                    suffix={stat.number.slice(parseInt(stat.number).toString().length)}
                     enableScrollSpy
                     scrollSpyOnce
                   />

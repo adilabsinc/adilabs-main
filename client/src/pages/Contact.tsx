@@ -91,6 +91,12 @@ export default function Contact() {
       address: 'Gachiboli, Hyderabad, Telangana',
       phone: '+91 9133085364'
     },
+    {
+      city: 'USA',
+      country: 'USA',
+      address: '586 Winterton way Mississuaga Ontario L5R 3J4',
+      phone: '+1 (623) 336-5336'
+    },
   ];
 
   // Coordinates for 586 Winterton way Mississuaga Ontario L5R 3J4
@@ -337,7 +343,7 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {offices.map((office, index) => (
               <motion.div
                 key={office.city}
