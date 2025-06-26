@@ -201,7 +201,7 @@ export default function Home() {
               <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-purple-400" /> We're consultants, guides, and partners for brands</li>
             </ul>
             <div className="mt-8">
-              <div className="text-purple-300 font-semibold">Ikram Ahmed</div>
+              <div className="text-purple-300 font-semibold">Mohammed Shahnawaz</div>
               <div className="text-gray-400 text-sm mb-2">CTO, Prosols</div>
               {/* SVG Signature */}
               <svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
